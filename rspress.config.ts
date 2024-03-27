@@ -177,7 +177,8 @@ const toFeedItem: PluginRssOption['toFeedItem'] = (page) => {
 };
 
 export default defineConfig({
-  root: path.join('veScaleWeb', __dirname, 'docs'),
+  base: '/veScaleWeb/',
+  root: path.join(__dirname, 'docs'),
   title: 'veScale',
   description: 'AI Accelerator Benchmark focuses on evaluating AI Accelerators',
   logo: {
@@ -186,7 +187,7 @@ export default defineConfig({
   },
   icon: '/icon.png',
   lang: 'en',
-  globalStyles: path.join('veScaleWeb', __dirname, 'theme', 'index.css'),
+  globalStyles: path.join(__dirname, 'theme', 'index.css'),
   markdown: {
     checkDeadLinks: true,
   },
@@ -246,14 +247,9 @@ export default defineConfig({
   builderConfig: {
     source: {
       alias: {
-        '@builtIns': path.join(
-          'veScaleWeb',
-          __dirname,
-          'components',
-          'builtIns'
-        ),
-        '@components': path.join('veScaleWeb', __dirname, 'components'),
-        '@hooks': path.join('veScaleWeb', __dirname, 'hooks'),
+        '@builtIns': path.join(__dirname, 'components', 'builtIns'),
+        '@components': path.join(__dirname, 'components'),
+        '@hooks': path.join(__dirname, 'hooks'),
       },
     },
     dev: {
@@ -300,22 +296,10 @@ export default defineConfig({
       copy: {
         patterns: [
           {
-            from: path.join(
-              'veScaleWeb',
-              __dirname,
-              'docs',
-              'public',
-              '_redirects'
-            ),
+            from: path.join(__dirname, 'docs', 'public', '_redirects'),
           },
           {
-            from: path.join(
-              'veScaleWeb',
-              __dirname,
-              'docs',
-              'public',
-              '_headers'
-            ),
+            from: path.join(__dirname, 'docs', 'public', '_headers'),
           },
         ],
       },
