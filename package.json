@@ -1,7 +1,7 @@
 {
   "name": "@modern-js/vescale-doc",
   "version": "1.0.0",
-  "homepage": "https://volcengine.github.io/veScaleWeb/",
+  "homepage": "/veScaleWeb",
   "description": "",
   "main": "index.js",
   "scripts": {
