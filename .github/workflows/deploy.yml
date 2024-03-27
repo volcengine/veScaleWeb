@@ -41,6 +41,7 @@ jobs:
 
     - name: Build
       run: |
+        export PUBLIC_URL=/veScaleWeb/
         npm install
         npm run build
 
