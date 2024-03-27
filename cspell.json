@@ -28,7 +28,11 @@
     "vant",
     "nativizing",
     "feishu",
-    "weapp"
+    "weapp",
+    "kubecon",
+    "ASIC",
+    "ASICs",
+    "XKKCNZZNJD",
   ],
   "enableFiletypes": ["mdx"]
 }

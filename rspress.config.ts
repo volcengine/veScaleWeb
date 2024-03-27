@@ -127,15 +127,24 @@ function getSidebarConfig(lang: 'zh' | 'en'): Sidebar {
     ],
     [getLink('/blog/')]: [
       {
-        text: getText('AI ASIC 的基准测试、优化和生态系统协作的整合', 'Integration of Benchmark Testing, Optimization, and Ecosystem Collaboration for AI ASICs'),
+        text: getText(
+          'AI ASIC 的基准测试、优化和生态系统协作的整合',
+          'Integration of Benchmark Testing, Optimization, and Ecosystem Collaboration for AI ASICs'
+        ),
         link: getLink('/blog/kubecon'),
       },
       {
-        text: getText('veScale将参加Open Source Summit', 'veScale will be participating in the upcoming Open Source Summit in Shanghai'),
+        text: getText(
+          'veScale将参加Open Source Summit',
+          'veScale will be participating in the upcoming Open Source Summit in Shanghai'
+        ),
         link: getLink('/blog/summit'),
       },
       {
-        text: getText('GRAPHCORE现已支持veScale', 'Graphcore now supports veScale'),
+        text: getText(
+          'GRAPHCORE现已支持veScale',
+          'Graphcore now supports veScale'
+        ),
         link: getLink('/blog/graphcore'),
       },
     ],
@@ -168,7 +177,7 @@ const toFeedItem: PluginRssOption['toFeedItem'] = (page) => {
 };
 
 export default defineConfig({
-  root: path.join(__dirname, 'docs'),
+  root: path.join('veScaleWeb', __dirname, 'docs'),
   title: 'veScale',
   description: 'AI Accelerator Benchmark focuses on evaluating AI Accelerators',
   logo: {
@@ -177,7 +186,7 @@ export default defineConfig({
   },
   icon: '/icon.png',
   lang: 'en',
-  globalStyles: path.join(__dirname, 'theme', 'index.css'),
+  globalStyles: path.join('veScaleWeb', __dirname, 'theme', 'index.css'),
   markdown: {
     checkDeadLinks: true,
   },
@@ -218,7 +227,8 @@ export default defineConfig({
       {
         lang: 'en',
         title: 'veScale',
-        description: 'AI Accelerator Benchmark focuses on evaluating AI Accelerators',
+        description:
+          'AI Accelerator Benchmark focuses on evaluating AI Accelerators',
         nav: getNavConfig('en'),
         sidebar: getSidebarConfig('en'),
         label: 'English',
@@ -236,9 +246,14 @@ export default defineConfig({
   builderConfig: {
     source: {
       alias: {
-        '@builtIns': path.join(__dirname, 'components', 'builtIns'),
-        '@components': path.join(__dirname, 'components'),
-        '@hooks': path.join(__dirname, 'hooks'),
+        '@builtIns': path.join(
+          'veScaleWeb',
+          __dirname,
+          'components',
+          'builtIns'
+        ),
+        '@components': path.join('veScaleWeb', __dirname, 'components'),
+        '@hooks': path.join('veScaleWeb', __dirname, 'hooks'),
       },
     },
     dev: {
@@ -254,7 +269,10 @@ export default defineConfig({
         ...getMeta('og:title', 'veScale'),
         ...getMeta('og:type', 'website'),
         ...getMeta('og:url', PUBLISH_URL),
-        ...getMeta('og:description', 'AI Accelerator Benchmark focuses on evaluating AI Accelerators'),
+        ...getMeta(
+          'og:description',
+          'AI Accelerator Benchmark focuses on evaluating AI Accelerators'
+        ),
         ...getMeta('twitter:site', '@vescale'),
         ...getMeta('twitter:card', 'summary_large_image'),
       },
@@ -282,10 +300,22 @@ export default defineConfig({
       copy: {
         patterns: [
           {
-            from: path.join(__dirname, 'docs', 'public', '_redirects'),
+            from: path.join(
+              'veScaleWeb',
+              __dirname,
+              'docs',
+              'public',
+              '_redirects'
+            ),
           },
           {
-            from: path.join(__dirname, 'docs', 'public', '_headers'),
+            from: path.join(
+              'veScaleWeb',
+              __dirname,
+              'docs',
+              'public',
+              '_headers'
+            ),
           },
         ],
       },
