@@ -42,7 +42,7 @@ jobs:
     - name: Build
       run: |
         npm install
-        npm run build
+        PUBLIC_URL=/veScaleWeb/ npm run build
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v2
