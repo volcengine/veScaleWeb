@@ -1,0 +1,40 @@
+<mxfile host="Electron" modified="2024-04-09T19:45:21.978Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="eo-tgkcIpxwmk5ss8sP8" version="23.1.5" type="device">
+  <diagram name="Page-1" id="IkTIo2W84xr3qizVQh_Z">
+    <mxGraphModel dx="2206" dy="1228" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-10" value="" style="whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;fillColor=none;gradientColor=none;gradientDirection=radial;" parent="1" vertex="1">
+          <mxGeometry width="900" height="900" as="geometry" />
+        </mxCell>
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-6" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="122" y="90" width="670" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-2" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=197.9961538461539;strokeWidth=20;strokeColor=#3399FF;fontColor=#3399FF;fillColor=none;fontSize=28;rounded=1;shadow=0;" parent="Ci-mhQPUg_75TSeiISrQ-6" vertex="1">
+          <mxGeometry x="-20" y="238.89" width="690" height="191.11" as="geometry" />
+        </mxCell>
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-3" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=30;startArrow=none;startFill=0;endFill=0;strokeColor=#3399FF;fontColor=#007FFF;fontSize=30;shadow=0;" parent="Ci-mhQPUg_75TSeiISrQ-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="190" y="130" as="sourcePoint" />
+            <mxPoint x="190.47272727272733" y="191.11111111111106" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-5" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=30;startArrow=none;startFill=0;endFill=0;strokeColor=#3399FF;fontColor=#007FFF;fontSize=30;shadow=0;" parent="Ci-mhQPUg_75TSeiISrQ-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="325.4" y="70" as="sourcePoint" />
+            <mxPoint x="325" y="191.11111111111106" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-4" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=30;startArrow=none;startFill=0;endFill=0;strokeColor=#3399FF;fontColor=#007FFF;fontSize=30;shadow=0;" parent="Ci-mhQPUg_75TSeiISrQ-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="461.99727272727296" y="-10" as="sourcePoint" />
+            <mxPoint x="462.27" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-7" value="&lt;span style=&quot;font-size: 200px;&quot;&gt;veScale&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=3;fontSize=200;fontFamily=Helvetica;fontStyle=1;fontColor=#999999;" parent="1" vertex="1">
+          <mxGeometry y="600" width="900" height="138.46" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,43 @@
+<mxfile host="Electron" modified="2024-04-09T18:57:40.016Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="mVWTGJP-7rg9on3STlAd" version="23.1.5" type="device">
+  <diagram name="Page-1" id="IkTIo2W84xr3qizVQh_Z">
+    <mxGraphModel dx="735" dy="483" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-10" value="" style="whiteSpace=wrap;html=1;aspect=fixed;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="307.5" y="10" width="195" height="195" as="geometry" />
+        </mxCell>
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-11" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="350" y="40" width="110" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-6" value="" style="group" vertex="1" connectable="0" parent="Ci-mhQPUg_75TSeiISrQ-11">
+          <mxGeometry width="110" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-2" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=35;strokeWidth=4;strokeColor=#3399FF;fontColor=#3399FF;" vertex="1" parent="Ci-mhQPUg_75TSeiISrQ-6">
+          <mxGeometry y="50" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-3" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=4;startArrow=none;startFill=0;endFill=0;strokeColor=#3399FF;fontColor=#007FFF;" edge="1" parent="Ci-mhQPUg_75TSeiISrQ-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="34.75" y="20" as="sourcePoint" />
+            <mxPoint x="35" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-4" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=4;startArrow=none;startFill=0;endFill=0;strokeColor=#3399FF;fontColor=#007FFF;" edge="1" parent="Ci-mhQPUg_75TSeiISrQ-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="75" as="sourcePoint" />
+            <mxPoint x="75" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-5" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=4;startArrow=none;startFill=0;endFill=0;strokeColor=#3399FF;fontColor=#007FFF;" edge="1" parent="Ci-mhQPUg_75TSeiISrQ-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="55" y="10" as="sourcePoint" />
+            <mxPoint x="55" y="40" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ci-mhQPUg_75TSeiISrQ-7" value="&lt;span style=&quot;font-size: 42px;&quot;&gt;veScale&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=3;fontSize=42;fontFamily=Helvetica;fontStyle=0;fontColor=#333333;" vertex="1" parent="Ci-mhQPUg_75TSeiISrQ-11">
+          <mxGeometry x="25" y="105" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
