@@ -231,7 +231,7 @@ export default defineConfig({
         icon: 'slack',
         mode: 'link',
         content:
-          'https://applink.larkoffice.com/client/chat/chatter/add_by_link?link_token=8a9m7db8-5ee9-4561-b3d8-dbf93149ab2v', // TODO
+          'https://join.slack.com/t/vescale/shared_invite/zt-2gw87xkkg-_oLPkBKzLU1BOtH~6oHsYg',
       },
     ],
     locales: [
