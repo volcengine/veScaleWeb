@@ -4,9 +4,8 @@ linkFeed: blog-en
 
 hero:
   name: veScale
-  text: Benchmark focuses on AI Accelerators
-  tagline: From a practical production perspective.
-  # TODO logo
+  text: A PyTorch Native LLM Training Framework
+  # tagline: From a practical production perspective.
   image:
     src: /icon.png
     alt: logo
@@ -19,28 +18,28 @@ hero:
       link: /guide/quick-start
 
 features:
-  - title: Open Source & Reproducibility
-    details: veScale offers an open-source AI accelerator benchmarking tool, ensuring easy access and utilization for companies and research institutions alike. 
+  - title: PyTorch Native
+    details: veScale is rooted in PyTorch-native data structures, operators, and APIs, enjoying the ecosystem of PyTorch that dominates the ML world.
+    icon: 🔥
+  
+  - title: Zero Model Code Change
+    details: veScale decouples distributed system design from model architecture, requiring near-zero or zero modification on the model code of users.
+    icon: 🛡
+
+  - title: Single Device Abstraction
+    details: veScale provides single-device semantics to users, automatically distributing and orchestrating model execution in a cluster of devices. 
     icon: 🚀
-
-  - title: AI Production-Centric Design
-    details: veScale continually updates its benchmarks to reflect current business scenarios and the state-of-the-art (SOTA). 
-    icon: ⚡
-
-  - title: Business & SOTA Aligned
-    details: The tool evaluates beyond just performance and accuracy, taking into account factors such as compiler usability and the applicability of models in real business environments.
-    icon: 💻
-
-  - title: Comprehensive Assessment Standards
-    details: veScale focuses on a holistic evaluation, including power consumption, cost-effectiveness, and cross-platform compatibility.
-    icon: 🔍
-
-  - title: Community-Driven Innovation
-    details: Encourages contributions from developers and researchers worldwide, making the benchmarking tool not just an assessment tool but also a platform for innovation.
-    icon: 🌐
-
-  - title: Transparency and Openness
-    details: Maintains a high level of transparency and openness, with all testing methodologies, datasets, and evaluation criteria being publicly accessible.
+  
+  - title: Automatic Parallelism Planning
+    details: veScale parallelizes model execution with a synergy of strategies (tensor/sequence/data/ZeRO/pipeline parallelism) under semi- or full-automation [TBA].
     icon: 🎯
+  
+  - title: Eager & Compile Mode
+    details: veScale supports not only Eager-mode automation for parallel training/inference but also Compile-mode for ultimate performance [TBA].
+    icon: ⚡ 
 
+  - title: Open Source & Reproducibility
+    details: veScale is an open-source project, ensuring easy access and utilization for companies and research institutions alike. 
+    icon: 🌐 
+    
 ---
