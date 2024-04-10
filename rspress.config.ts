@@ -41,6 +41,10 @@ function getNavConfig(lang: 'zh' | 'en'): NavItem[] {
       text: getText('关于', 'About'),
       items: [
         {
+          text: getText('我们', 'Who Are We'),
+          link: getLink('/misc/who-are-we'),
+        },
+        {
           text: getText('加入我们', 'Join Us'),
           link: getLink('/misc/join-us'),
         },
