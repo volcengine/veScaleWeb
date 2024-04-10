@@ -24,7 +24,7 @@ export function HomeLayout() {
           <HomeHero hero={frontmatter.hero as Hero} />
           <HomeFeature features={frontmatter.features as Feature[]} />
         </div>
-      {/* </div> */}
+      </div>
       {/* Benchmark Page */}
       {/* <NoSSR>
         <Benchmark />
