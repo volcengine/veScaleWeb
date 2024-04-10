@@ -3,7 +3,7 @@ import { HomeFeature, Feature } from '../components/HomeFeatures';
 import { NoSSR, usePageData } from 'rspress/runtime';
 // import { Benchmark } from '../components/Benchmark';
 // import { Hardware } from '../components/Hardware';
-// import { HomeFooter } from '../components/HomeFooter/index';
+import { HomeFooter } from '../components/HomeFooter/index';
 // import { Contributors } from '../components/Contributors';
 
 export function HomeLayout() {
@@ -32,7 +32,7 @@ export function HomeLayout() {
       <NoSSR><Hardware /></NoSSR>
       <Contributors /> */}
       {/* Footer */}
-      {/* <HomeFooter /> */}
+      <HomeFooter />
     </div>
   );
 }
