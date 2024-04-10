@@ -233,7 +233,7 @@ export default defineConfig({
         sidebar: getSidebarConfig('en'),
         label: 'English',
       },
-      {
+      { // TODO: enable chinese webpage
         lang: 'en',
         title: 'veScale',
         description: 'A PyTorch Native LLM Training Framework',
