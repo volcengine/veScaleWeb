@@ -219,19 +219,19 @@ export default defineConfig({
       {
         icon: 'twitter',
         mode: 'link',
-        content: 'https://twitter.com/vescale',
+        content: 'https://twitter.com/vescale', // TODO
       },
       {
         icon: 'lark',
         mode: 'link',
         content:
-          'https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=edcvd6ab-cb20-4210-a828-5e40be0c768l',
+          'https://applink.larkoffice.com/client/chat/chatter/add_by_link?link_token=8a9m7db8-5ee9-4561-b3d8-dbf93149ab2v',
       },
       {
         icon: 'slack',
         mode: 'link',
         content:
-          'https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=edcvd6ab-cb20-4210-a828-5e40be0c768l',
+          'https://applink.larkoffice.com/client/chat/chatter/add_by_link?link_token=8a9m7db8-5ee9-4561-b3d8-dbf93149ab2v', // TODO
       },
     ],
     locales: [
