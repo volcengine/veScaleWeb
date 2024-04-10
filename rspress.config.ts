@@ -234,14 +234,14 @@ export default defineConfig({
         sidebar: getSidebarConfig('en'),
         label: 'English',
       },
-      // {
-      //   lang: 'zh',
-      //   title: 'veScale',
-      //   description: 'xxxxx',
-      //   nav: getNavConfig('zh'),
-      //   sidebar: getSidebarConfig('zh'),
-      //   label: '简体中文',
-      // },
+      {
+        lang: 'zh',
+        title: 'veScale',
+        description: 'xxxxx',
+        nav: getNavConfig('zh'),
+        sidebar: getSidebarConfig('zh'),
+        label: '简体中文',
+      },
     ],
   },
   builderConfig: {
