@@ -228,18 +228,17 @@ export default defineConfig({
       {
         lang: 'en',
         title: 'veScale',
-        description:
-          'A PyTorch Native LLM Training Framework',
+        description: 'A PyTorch Native LLM Training Framework',
         nav: getNavConfig('en'),
         sidebar: getSidebarConfig('en'),
         label: 'English',
       },
       {
-        lang: 'zh',
+        lang: 'en',
         title: 'veScale',
-        description: 'xxxxx',
-        nav: getNavConfig('zh'),
-        sidebar: getSidebarConfig('zh'),
+        description: 'A PyTorch Native LLM Training Framework',
+        nav: getNavConfig('en'),
+        sidebar: getSidebarConfig('en'),
         label: '简体中文',
       },
     ],
