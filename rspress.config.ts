@@ -219,7 +219,7 @@ export default defineConfig({
       {
         icon: 'twitter',
         mode: 'link',
-        content: 'https://twitter.com/vescale', // TODO
+        content: 'https://twitter.com/veScaleAI',
       },
       {
         icon: 'lark',
