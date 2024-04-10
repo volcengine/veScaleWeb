@@ -31,11 +31,11 @@ features:
     icon: 🚀
   
   - title: Automatic Parallelism Planning
-    details: veScale parallelizes model execution with a synergy of strategies (tensor/sequence/data/ZeRO/pipeline parallelism) under semi- or full-automation [TBA].
+    details: veScale parallelizes model execution with a synergy of strategies (tensor, sequence, data, ZeRO, pipeline parallelism) under semi- or full-automation [coming soon].
     icon: 🎯
   
   - title: Eager & Compile Mode
-    details: veScale supports not only Eager-mode automation for parallel training/inference but also Compile-mode for ultimate performance [TBA].
+    details: veScale supports not only Eager-mode automation for parallel training andinference but also Compile-mode for ultimate performance [coming soon].
     icon: ⚡ 
 
   - title: Open Source & Reproducibility
