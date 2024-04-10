@@ -180,7 +180,7 @@ export default defineConfig({
   base: '/veScaleWeb/',
   root: path.join(__dirname, 'docs'),
   title: 'veScale',
-  description: 'AI Accelerator Benchmark focuses on evaluating AI Accelerators',
+  description: 'A PyTorch Native LLM Training Framework',
   logo: {
     light: '/vescale-logo-light.png',
     dark: '/vescale-logo-dark.png',
@@ -229,19 +229,19 @@ export default defineConfig({
         lang: 'en',
         title: 'veScale',
         description:
-          'AI Accelerator Benchmark focuses on evaluating AI Accelerators',
+          'A PyTorch Native LLM Training Framework',
         nav: getNavConfig('en'),
         sidebar: getSidebarConfig('en'),
         label: 'English',
       },
-      {
-        lang: 'zh',
-        title: 'veScale',
-        description: '专注于AI芯片基准测试',
-        nav: getNavConfig('zh'),
-        sidebar: getSidebarConfig('zh'),
-        label: '简体中文',
-      },
+      // {
+      //   lang: 'zh',
+      //   title: 'veScale',
+      //   description: 'xxxxx',
+      //   nav: getNavConfig('zh'),
+      //   sidebar: getSidebarConfig('zh'),
+      //   label: '简体中文',
+      // },
     ],
   },
   builderConfig: {
@@ -267,7 +267,7 @@ export default defineConfig({
         ...getMeta('og:url', PUBLISH_URL),
         ...getMeta(
           'og:description',
-          'AI Accelerator Benchmark focuses on evaluating AI Accelerators'
+          'A PyTorch Native LLM Training Framework'
         ),
         ...getMeta('twitter:site', '@vescale'),
         ...getMeta('twitter:card', 'summary_large_image'),
