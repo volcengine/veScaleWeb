@@ -1,10 +1,10 @@
 import { Hero, HomeHero } from '../components/HomeHero';
 import { HomeFeature, Feature } from '../components/HomeFeatures';
 import { NoSSR, usePageData } from 'rspress/runtime';
-import { Benchmark } from '../components/Benchmark';
-import { Hardware } from '../components/Hardware';
+// import { Benchmark } from '../components/Benchmark';
+// import { Hardware } from '../components/Hardware';
 import { HomeFooter } from '../components/HomeFooter/index';
-import { Contributors } from '../components/Contributors';
+// import { Contributors } from '../components/Contributors';
 
 export function HomeLayout() {
   const { page } = usePageData();
@@ -26,11 +26,11 @@ export function HomeLayout() {
         </div>
       </div>
       {/* Benchmark Page */}
-      <NoSSR>
+      {/* <NoSSR>
         <Benchmark />
       </NoSSR>
       <NoSSR><Hardware /></NoSSR>
-      <Contributors />
+      <Contributors /> */}
       {/* Footer */}
       <HomeFooter />
     </div>

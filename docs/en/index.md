@@ -3,7 +3,7 @@ pageType: home
 linkFeed: blog-en
 
 hero:
-  name: veScale
+  # name: veScale
   text: A PyTorch Native LLM Training Framework
   # tagline: From a practical production perspective.
   image:
@@ -36,10 +36,10 @@ features:
   
   - title: Eager & Compile Mode
     details: veScale supports not only Eager-mode automation for parallel training andinference but also Compile-mode for ultimate performance [coming soon].
-    icon: ⚡ 
+    icon: ⚡
 
   - title: Open Source & Reproducibility
     details: veScale is an open-source project, ensuring easy access and utilization for companies and research institutions alike. 
-    icon: 🌐 
+    icon: 🌐
     
 ---
