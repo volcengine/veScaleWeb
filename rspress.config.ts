@@ -227,6 +227,12 @@ export default defineConfig({
         content:
           'https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=edcvd6ab-cb20-4210-a828-5e40be0c768l',
       },
+      {
+        icon: 'slack',
+        mode: 'link',
+        content:
+          'https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=edcvd6ab-cb20-4210-a828-5e40be0c768l',
+      },
     ],
     locales: [
       {
