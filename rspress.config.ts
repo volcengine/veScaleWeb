@@ -33,7 +33,7 @@ function getNavConfig(lang: 'zh' | 'en'): NavItem[] {
       activeMatch: '/guide/',
     },
     {
-      text: getText('博客', 'Blog'),
+      text: getText('文章', 'Publication'),
       link: getLink('/blog/kubecon'),
       activeMatch: '/blog',
     },
