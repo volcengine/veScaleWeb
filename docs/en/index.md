@@ -35,7 +35,7 @@ features:
     icon: 🎯
   
   - title: Eager & Compile Mode
-    details: veScale supports not only Eager-mode automation for parallel training andinference but also Compile-mode for ultimate performance [coming soon].
+    details: veScale supports not only Eager-mode automation for parallel training and inference but also Compile-mode for ultimate performance [coming soon].
     icon: ⚡
 
   - title: Open Source & Reproducibility
