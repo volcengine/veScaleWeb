@@ -102,6 +102,10 @@ function getSidebarConfig(lang: 'zh' | 'en'): Sidebar {
             link: getLink('/guide/doptimizer'),
             text: getText('DOptimizer', 'DOptimizer'),
           },
+          {
+            link: getLink('/guide/pp'),
+            text: getText('PP', 'PP'),
+          },
         ],
       },
       {
