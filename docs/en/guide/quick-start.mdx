@@ -1,38 +1,54 @@
-import { Tabs, Tab } from '@theme';
-
 # Quick Start
 
-This chapter will get you started with veScale using a simple executable example.
+First, find **veScale** repo: https://github.com/volcengine/veScale/tree/main
 
-## Usage
+## Installation
 
-The user uses launch.py as the entry point. When using byte mlperf to evaluate the model, you only need to pass in two parameters ``--task`` and ``--hardware_type``, as shown below:
-<Tabs values={[{ label: 'bash' }]}>
-  <Tab>
+### From Source
 
-```sh
-python3 launch.py --task xxx --hardware_type xxx
+#### Install a Patched Version of PyTorch
+
+```bash
+bash patches/build_pytorch_w_patch.sh
 ```
 
-  </Tab> 
+This will compile and install a patched version of PyTorch (based on v2.2.1_rc3).
+The patch code can be found here: [PyTorch-Patch](patches/patched_pytorch_v2.2.1_rc3.patch)
 
+#### Install a Patched Version of TorchDistX
 
-  <Tab>
-
-```sh
+```bash
+bash patches/build_torchdistX_w_patch.sh
 ```
 
-  </Tab>
-</Tabs>
+This will compile and install a patched version of TorchdistX (based on its master).
+The patch code can be found here: [TorchDistX-Patch](patches/patched_torchdistX_9c1b9f.patch)
 
-1. **``--task``**: parameter is the name of the incoming workload. You need to specify the workload. For example, if you would like to evaluate the workload: ``bert-tf-fp16.json``, you need to specify ``--task bert-tf-fp16``.
-Note: All workloads are defined under ``byte_mlperf/workloads``, and the name needs to be aligned with the file name when passing parameters. The current format is model-framework-precision.
+#### Install veScale
 
-2. **``--hardware_type``**: parameter is the incoming hardware_type name, there is no default value, it must be specified by the user. Example: To evaluate Habana Goya, specify --hardware_type GOYA .
-Note: All hardware types are defined under byte_mlperf/backends, and the name needs to be aligned with the folder name when passing parameters.
+```bash
+pushd python && pip3 install -r requirements.txt && pip3 install -e . && popd
+```
 
-3. **``--compile_only``**: parameter will make task stoped once compilation is finished
+This will install veScale and its dependencies.
 
-4. **``--show_task_list``**: parameter will print all task name
+### Docker Image
 
-5. **``--show_hardware_list``**: parameter will print all hardware backend
+#### Build the Docker Image
+
+Make sure it is in the Vescale directory.
+
+```bash
+docker build .
+```
+It may take a while to build the image.
+
+Once the building process is finished, you can `docker run` with the id.
+
+## Run Examples
+
+- nanoGPT: https://github.com/volcengine/veScale/tree/main/python/example/nanogpt_4D_finetune
+
+- Open LLAMA: https://github.com/volcengine/veScale/tree/main/python/example/open_llama_4D_benchmark
+
+- Mixtral: https://github.com/volcengine/veScale/tree/main/python/example/mixtral_4D_benchmark
