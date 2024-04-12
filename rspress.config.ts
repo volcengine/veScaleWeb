@@ -78,52 +78,52 @@ function getSidebarConfig(lang: 'zh' | 'en'): Sidebar {
       },
       {
         collapsible: false,
-        text: getText('Inference General Perf', 'Inference General Perf'),
+        text: getText('DTensor', 'DTensor'),
         items: [
           {
-            link: getLink('/guide/inference_general_overview'),
+            link: getLink('/guide/dtensor'),
             text: getText('概览', 'Overview'),
-          },
-          {
-            link: getLink('/guide/inference_general_vendor'),
-            text: getText('厂商接入指南', 'Vendor Intergration Guide'),
           },
         ],
       },
       {
         collapsible: false,
-        text: getText('Inference LLM Perf', 'Inference LLM Perf'),
+        text: getText('Parallel', 'Parallel'),
         items: [
           {
-            link: getLink('/guide/inference_llm_overview'),
-            text: getText('概览', 'Overview'),
+            link: getLink('/guide/dmodule'),
+            text: getText('DModule', 'DModule'),
           },
           {
-            link: getLink('/guide/inference_llm_vendor'),
-            text: getText('厂商接入指南', 'Vendor Intergration Guide'),
+            link: getLink('/guide/ddp'),
+            text: getText('DDP', 'DDP'),
+          },
+          {
+            link: getLink('/guide/doptimizer'),
+            text: getText('DOptimizer', 'DOptimizer'),
           },
         ],
       },
       {
         collapsible: false,
-        text: getText('Micro Perf', 'Micro Perf'),
+        text: getText('Plan', 'Plan'),
         items: [
           {
-            link: getLink('/guide/micro_overview'),
-            text: getText('概览', 'Overview'),
+            link: getLink('/guide/auto_tp_sp'),
+            text: getText('Auto TP & SP', 'Auto TP & SP'),
           },
           {
-            link: getLink('/guide/micro_vendor'),
-            text: getText('厂商接入指南', 'Vendor Intergration Guide'),
+            link: getLink('/guide/auto_pp'),
+            text: getText('Auto PP', 'Auto PP'),
           },
         ],
       },
       {
         collapsible: false,
-        text: getText('Training Perf', 'Training Perf'),
+        text: getText('Checkpoint', 'Checkpoint'),
         items: [
           {
-            link: getLink('/guide/training_overview'),
+            link: getLink('/guide/checkpoint'),
             text: getText('概览', 'Overview'),
           },
         ],
@@ -132,8 +132,8 @@ function getSidebarConfig(lang: 'zh' | 'en'): Sidebar {
     [getLink('/blog/')]: [
       {
         text: getText(
-          'AI ASIC 的基准测试、优化和生态系统协作的整合',
-          'Integration of Benchmark Testing, Optimization, and Ecosystem Collaboration for AI ASICs'
+          'MegaScale',
+          'MegaScale'
         ),
         link: getLink('/blog/megascale'),
       },
@@ -186,8 +186,8 @@ export default defineConfig({
       routePublicPath: PUBLISH_URL,
       feedOptions: { copyright: COPYRIGHT, link: PUBLISH_URL },
       feedOptionsByName: {
-        'blog-en': { title: 'veScale Blog', link: `${PUBLISH_URL}/blog` },
-        'blog-zh': { title: 'veScale 博客', link: `${PUBLISH_URL}/zh/blog` },
+        'blog-en': { title: 'veScale Publication', link: `${PUBLISH_URL}/blog` },
+        'blog-zh': { title: 'veScale Publication', link: `${PUBLISH_URL}/zh/blog` },
       },
       toFeedItem,
     }),

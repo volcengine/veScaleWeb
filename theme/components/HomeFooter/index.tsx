@@ -21,11 +21,11 @@ function useFooterData() {
         },
         {
           title: t('llm'),
-          link: getLink('/guide/inference_llm_overview'),
+          link: getLink('/guide/dmodule'),
         },
         {
           title: t('micro'),
-          link: getLink('/guide/micro_overview'),
+          link: getLink('/guide/auto_tp_sp'),
         },
       ],
     },
