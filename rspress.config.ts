@@ -91,6 +91,10 @@ function getSidebarConfig(lang: 'zh' | 'en'): Sidebar {
         text: getText('Parallel', 'Parallel'),
         items: [
           {
+            link: getLink('/guide/parallel_overview'),
+            text: getText('概览', 'Overview'),
+          },
+          {
             link: getLink('/guide/dmodule'),
             text: getText('DModule', 'DModule'),
           },
