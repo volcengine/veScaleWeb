@@ -34,7 +34,7 @@ function getNavConfig(lang: 'zh' | 'en'): NavItem[] {
     },
     {
       text: getText('文章', 'Publication'),
-      link: getLink('/blog/kubecon'),
+      link: getLink('/blog/megascale'),
       activeMatch: '/blog',
     },
     {
@@ -135,21 +135,7 @@ function getSidebarConfig(lang: 'zh' | 'en'): Sidebar {
           'AI ASIC 的基准测试、优化和生态系统协作的整合',
           'Integration of Benchmark Testing, Optimization, and Ecosystem Collaboration for AI ASICs'
         ),
-        link: getLink('/blog/kubecon'),
-      },
-      {
-        text: getText(
-          'veScale将参加Open Source Summit',
-          'veScale will be participating in the upcoming Open Source Summit in Shanghai'
-        ),
-        link: getLink('/blog/summit'),
-      },
-      {
-        text: getText(
-          'GRAPHCORE现已支持veScale',
-          'Graphcore now supports veScale'
-        ),
-        link: getLink('/blog/graphcore'),
+        link: getLink('/blog/megascale'),
       },
     ],
   };
