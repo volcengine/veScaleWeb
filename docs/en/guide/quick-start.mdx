@@ -1,6 +1,6 @@
 # Quick Start
 
-First, find **veScale** repo: https://github.com/volcengine/veScale/tree/main
+First, find **veScale** [**repo**](https://github.com/volcengine/veScale/tree/main).
 
 ## Installation
 
@@ -9,20 +9,18 @@ First, find **veScale** repo: https://github.com/volcengine/veScale/tree/main
 #### Install a Patched Version of PyTorch
 
 ```bash
-bash patches/build_pytorch_w_patch.sh
+bash [repo]/patches/build_pytorch_w_patch.sh
 ```
 
-This will compile and install a patched version of PyTorch (based on v2.2.1_rc3).
-The patch code can be found here: [PyTorch-Patch](patches/patched_pytorch_v2.2.1_rc3.patch)
+This will compile and install a patched version of PyTorch.
 
 #### Install a Patched Version of TorchDistX
 
 ```bash
-bash patches/build_torchdistX_w_patch.sh
+bash [repo]/patches/build_torchdistX_w_patch.sh
 ```
 
 This will compile and install a patched version of TorchdistX (based on its master).
-The patch code can be found here: [TorchDistX-Patch](patches/patched_torchdistX_9c1b9f.patch)
 
 #### Install veScale
 
@@ -30,13 +28,13 @@ The patch code can be found here: [TorchDistX-Patch](patches/patched_torchdistX_
 pushd python && pip3 install -r requirements.txt && pip3 install -e . && popd
 ```
 
-This will install veScale and its dependencies.
+This will install **veScale** and its dependencies.
 
 ### Docker Image
 
 #### Build the Docker Image
 
-Make sure it is in the Vescale directory.
+Make sure it is in the veScale directory.
 
 ```bash
 docker build .
