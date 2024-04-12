@@ -26,7 +26,7 @@
 
 - `DTensor` computation is implemented by `ShardingPropagator` which propagates placements from input to output for each operator with pre-registered sharding rules and strategies
 
-## How to use DTensor ``manually''?
+## How to use DTensor "manually"?
 
 - Example of `matmul`:
 
@@ -61,7 +61,7 @@
 
 - veScale DTensor has been and will be synchronizing with PyTorch DTensor 
 
-- veScale DTensor shares many code of PyTorch DTensor, but extends it with extra features as below (i.e., major differences from PyTorch DTensor v2.2.0) for our production usage:
+- veScale DTensor shares many code of PyTorch DTensor, but extends it with extra features as below (i.e., _**major differences from PyTorch DTensor**_ (v2.2.0)) for our production usage:
 
     - enabled DTensor support for third-party plug-in ops (e.g., APEX) by unleashing `DTensor.data_ptr` and handling asynchronous collective tensors (e.g., in `from_local`, `to_local`, `redistribute`)
 
