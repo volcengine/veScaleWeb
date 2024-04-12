@@ -4,7 +4,7 @@ import { NavItem, Sidebar } from '@rspress/shared';
 import { pluginRss, PluginRssOption } from './rspress/plugin-rss';
 import { toArray } from './rspress/plugin-rss/utils';
 
-const PUBLISH_URL = 'https://volcengine.github.io/veScaleWeb';
+const PUBLISH_URL = 'https://vescale.xyz/';
 const COPYRIGHT = '© 2023 Bytedance Inc. All Rights Reserved.';
 
 function getMeta(name: string, value: string) {
