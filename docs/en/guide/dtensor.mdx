@@ -1,5 +1,8 @@
 # DTensor (Distributed Tensor)
 
+## TLDR
+TODO
+
 ## Why DTensor?
 
 - `torch.Tensor` lacks the semantic of being distributed across multiple devices and running distributed operators
@@ -26,7 +29,69 @@
 
 - `DTensor` computation is implemented by `ShardingPropagator` which propagates placements from input to output for each operator with pre-registered sharding rules and strategies
 
-## How to use DTensor _Manually_?
+## What is veScale DTensor? How's different from PyTorch DTensor?
+
+- veScale is a PyTorch-native framework rooted in _**PyTorch DTensor**_
+
+- _**veScale DTensor**_ extends and enhances the _**PyTorch DTensor**_ for our production standard with extra features as below:
+
+    - enabled DTensor support for third-party plug-in ops (e.g., `APEX`) by unleashing `DTensor.data_ptr` and handling asynchronous collective tensors (e.g., in `from_local`, `to_local`, `redistribute`)
+
+    - make implicit `_Partial` to explicit `Partial` placement for optimized initialization, output, and checkpoint (with an extra dispatch mode)
+
+    - enabled DTensor ops that were not implemented in PyTorch for forward or/and backward:
+        - `argmax` 
+        - `argmin`
+        - `topk`
+        - `_unique2`
+        - `scatter_` 
+        - `scatter` 
+        - `select`
+        - `alias`
+        - `index_put_` 
+        - `index_put` 
+        - `index_add_`
+        - `_scaled_dot_product_flash_attention`
+        - `_scaled_dot_product_efficient_attention`
+        - `expand_as`
+        - `one_hot`
+        - `where`
+        - `Embedding` in vocabular parallel
+    
+    - support uneven sharding in conversion between `DTensor` and `torch.Tensor`
+
+    - decoupled special op handling that bypasses DTensor dispatching (`_bypass_for_dispatch`)
+
+    - enabled patching before (`_pre_patch_for_dispatch`) and after (`_post_patch_for_dispatch`) DTensor dispatch, for adding user's custom dispatching logic without coupling original dispatch logic
+
+    - enabled short-cut for ops to bypass sharding propagation entirely (`_bypass_for_sharding_prop`):
+
+    - bypassed `tensor_meta` propagation for ops:
+        - with output DTensor as pure `Replicate`, by using local output Tensor's `tensor_meta`
+        - with registered `tensor_meta` propagation under `dtensor/ops` (e.g., `conv`, `slice`, `copy`, `clone`, `bucketize`, `t`) 
+        - excluding ops in `recompute_tensor_meta_list` (e.g., `clone`, `native_dropout`, `nll_loss_forward`)
+        
+    - enabled `DeviceMesh` on `meta` device type
+    
+    - enabled `DeviceMesh` initialization from an existing processs group
+
+    - enabled `DeviceMesh` being split into a list of sub meshes
+
+    - disabled redistributed input:
+        - torch DTensor allows each op select its best sharding _strategy_ for input-output sharding based on a cost model capturing input redistribution communication and then redistributes input DTensor to selected input-sharding. 
+        - But we currently disable this feature (via environment var `VESCALE_DISABLE_REDISTRIBUTE`), as we don't expect uncontrollable resharding and implicit communication in DTensor dispatch for production. (Ideally, all resharding and communication should be controlled by the end users.) 
+
+    - support deferred initiailization and materialization for DTensor with extended `torchdistx`
+
+    - [experimental] developed `InterleavedShard` placement to support merged QKV in MHA
+
+    - [experimental] enabled correct random ops under abitrary sharding and uneven sharding
+
+    - [experimental] extreme performance with C++ DTensor
+
+    - [experimental] extreme performance with dispatching-free DTensor
+
+## How to use veScale DTensor _manually_?
 
 - Example of `matmul`:
 
@@ -55,58 +120,7 @@
 
 - Original examples can be found in PyTorch [DTensor](https://github.com/pytorch/pytorch/tree/main/torch/distributed/_tensor).
 
-## What is veScale DTensor?
 
-- veScale is a PyTorch native framework rooted in PyTorch DTensor
-
-- veScale DTensor has been and will be synchronizing with PyTorch DTensor 
-
-- veScale DTensor shares many code of PyTorch DTensor, but extends it with extra features as below (i.e., _**major differences from PyTorch DTensor**_ (v2.2.0)) for our production usage:
-
-    - enabled DTensor support for third-party plug-in ops (e.g., APEX) by unleashing `DTensor.data_ptr` and handling asynchronous collective tensors (e.g., in `from_local`, `to_local`, `redistribute`)
-
-    - make implicit `_Partial` to explicit `Partial` placement for optimized initialization, output, and checkpoint (with an extra dispatch mode)
-
-    - enabled DTensor ops that were not implemented in PyTorch for forward or/and backward:
-        - `argmax` and `argmin`
-        - `topk`
-        - `_unique2`
-        - `scatter_` and `scatter` 
-        - `select`
-        - `alias`
-        - `index_put_` and `index_put` and `index_add_`
-        - `_scaled_dot_product_flash_attention`
-        - `_scaled_dot_product_efficient_attention`
-        - `expand_as`
-        - `one_hot`
-        - `where`
-    
-    - support uneven sharding in conversion between `DTensor` and `torch.Tensor`
-
-    - decoupled special op handling that bypasses DTensor dispatching (`_bypass_for_dispatch`)
-
-    - enabled patching before (`_pre_patch_for_dispatch`) and after (`_post_patch_for_dispatch`) DTensor dispatch, for adding user's custom dispatching logic without coupling original dispatch logic
-
-    - enabled short-cut for ops to bypass sharding propagation entirely (`_bypass_for_sharding_prop`):
-
-    - bypassed `tensor_meta` propagation for ops:
-        - with output DTensor as pure `Replicate`, by using local output Tensor's `tensor_meta`
-        - with registered `tensor_meta` propagation under `dtensor/ops` (e.g., `conv`, `slice`, `copy`, `clone`, `bucketize`, `t`) 
-        - excluding ops in `recompute_tensor_meta_list` (e.g., `clone`, `native_dropout`, `nll_loss_forward`)
-        
-    - enabled `DeviceMesh` on `meta` device type
-    
-    - enabled `DeviceMesh` initialization from an existing processs group
-
-    - enabled `DeviceMesh` being split into a list of sub meshes
-
-    - disabled redistributed input:
-        - torch DTensor allows each op select its best sharding _strategy_ for input-output sharding based on a cost model capturing input redistribution communication and then redistributes input DTensor to selected input-sharding. 
-        - But we currently disable this feature (via environment var `VESCALE_DISABLE_REDISTRIBUTE`), as we don't expect uncontrollable resharding and implicit communication in DTensor dispatch for production. (Ideally, all resharding and communication should be controlled by the end users.) 
-
-    - support deferred initiailization and materialization for DTensor with extended `torchdistx`
-
-    - [experimental] developed `InterleavedShard` placement to support merged QKV in MHA
 
 
 ## What if encountering an operator that is not supported by DTensor yet?
@@ -224,3 +238,8 @@ def layer_norm_strategy(mesh: DeviceMesh, op_schema: OpSchema) -> OpStrategy:
     return output_strategy
     
 ```
+
+## Acknowledgement
+
+We would like to acknowledge the assistance of and collaboration with
+the [PyTorch DTensor team](https://github.com/pytorch/pytorch/tree/main/torch/distributed/_tensor).
