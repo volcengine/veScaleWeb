@@ -1,0 +1,25 @@
+<mxfile host="Electron" modified="2024-04-16T18:08:32.840Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="PC_aahFpdzmRj-Ohcx4c" version="23.1.5" type="device">
+  <diagram name="Page-1" id="IkTIo2W84xr3qizVQh_Z">
+    <mxGraphModel dx="5940" dy="16940" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="3900" pageHeight="840" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hC4GVvNIdUDclucmtm5C-6" value="&lt;span style=&quot;font-size: 650px;&quot;&gt;veScale&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeWidth=3;fontSize=650;fontFamily=Helvetica;fontStyle=1;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1155" y="180" width="2680" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="hC4GVvNIdUDclucmtm5C-7" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=197.9961538461539;strokeWidth=20;strokeColor=none;fontColor=#3399FF;fillColor=#01e5e6;fontSize=28;rounded=1;shadow=0;arcSize=50;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="215" y="480" width="350" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="hC4GVvNIdUDclucmtm5C-8" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=197.9961538461539;strokeWidth=20;strokeColor=none;fontColor=#3399FF;fillColor=#0073F7;fontSize=28;rounded=1;shadow=0;arcSize=50;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="390" y="340" width="350" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="hC4GVvNIdUDclucmtm5C-9" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=197.9961538461539;strokeWidth=20;strokeColor=none;fontColor=#3399FF;fillColor=#01e5e6;fontSize=28;rounded=1;shadow=0;arcSize=50;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="565" y="202" width="350" height="560" as="geometry" />
+        </mxCell>
+        <mxCell id="hC4GVvNIdUDclucmtm5C-10" value="" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;size=197.9961538461539;strokeWidth=20;strokeColor=none;fontColor=#3399FF;fillColor=#0073F7;fontSize=28;rounded=1;shadow=0;arcSize=50;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="740" y="62" width="350" height="700" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
