@@ -34,7 +34,7 @@ function getNavConfig(lang: 'zh' | 'en'): NavItem[] {
     },
     {
       text: getText('文章', 'Publication'),
-      link: getLink('/blog/megascale'),
+      link: getLink('/blog/mlsys2024'),
       activeMatch: '/blog',
     },
     {
