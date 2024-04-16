@@ -96,19 +96,23 @@ function getSidebarConfig(lang: 'zh' | 'en'): Sidebar {
           },
           {
             link: getLink('/guide/dmodule'),
-            text: getText('DModule', 'DModule'),
+            text: getText('Tensor Parallel & Sequence Parallel', 'Tensor Parallel & Sequence Parallel'),
           },
           {
             link: getLink('/guide/ddp'),
-            text: getText('DDP', 'DDP'),
+            text: getText('Data Parallel', 'Data Parallel'),
           },
           {
             link: getLink('/guide/doptimizer'),
-            text: getText('DOptimizer', 'DOptimizer'),
+            text: getText('Optimizer Parallel', 'Optimizer Parallel'),
           },
           {
             link: getLink('/guide/pp'),
-            text: getText('PP', 'PP'),
+            text: getText('Pipeline Parallel', 'Pipeline Parallel'),
+          },
+          {
+            link: getLink('/guide/vedevicemesh'),
+            text: getText('nD Device Mesh', 'nD Device Mesh'),
           },
         ],
       },
@@ -118,11 +122,11 @@ function getSidebarConfig(lang: 'zh' | 'en'): Sidebar {
         items: [
           {
             link: getLink('/guide/auto_tp_sp'),
-            text: getText('Auto TP & SP', 'Auto TP & SP'),
+            text: getText('Auto TP & SP Plan', 'Auto TP & SP Plan'),
           },
           {
             link: getLink('/guide/auto_pp'),
-            text: getText('Auto PP', 'Auto PP'),
+            text: getText('Auto PP Plan', 'Auto PP Plan'),
           },
         ],
       },
