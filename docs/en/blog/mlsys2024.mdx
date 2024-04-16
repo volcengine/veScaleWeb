@@ -1,0 +1,55 @@
+---
+title: "Towards PyTorch-Native Auto-Parallel Framework"
+date: 2024-05-13
+weight: 2
+keywords: ["MLSys2024"]
+---
+
+# Towards PyTorch-Native Auto-Parallel Framework
+
+## Abstract
+
+**Introduction.**
+The era of giant model today calls forth distributed training.
+Despite countless distributed training frameworks have been published in the past decade (e.g., _FlexFlow_, _Alpa_, to name a few), 
+few have excelled at the _**Ease of Use**_ and development extensibility demanded by the real industry production,
+as the quality most favored for a framework is often the _**Ease of Use**_ instead of pure _Performance_. 
+Companies developing 100s~1000s models a week benefit the most from a framework that is both easy to use and extend, and provides elegant encapsulation of models, configurations and infrastructure APIs.
+The _Ease of Use_ of a framework for training and developing LLM lies in two essentials -- _**PyTorch**_ and _**Automatic Parallelism**_, because: 
+i) _PyTorch_ ecosystem dominates the ML community today and owns 92% models on _HuggingFace_ and 70% research on _Papers with Code_, 
+and ii) gigantic models with 100s billions parameters cannot be trained without _3D Parallelism_ where manually distributing or tuning each operator or layer takes forever. 
+(By _Automatic Parallelism_, we meant both _automatic model distribution across devices_ and _automatic parallelism strategy search_.)
+
+**Problem.**
+Currently, this _Ease of Use_ is "broken" for industry-level frameworks, as they are either not _PyTorch_-native or not fully _Automated_ in parallelism.
+The famous frameworks can be categorized as below:
+- _**Not PyTorch-native**_: _TensorFlow_, _JAX_, and _Ray_ alienate themselves from the majority of ML community.
+- _**Neither PyTorch-native nor Automated**_: _Megatron-LM_ is essentially not a framework but a system specialized for Transformers, with:
+        i) customized operators and runtime, preventing its easy extensibility like native _PyTorch_,
+        and ii) intertwined system design with model architecture, which requires system experts to not only manually rewrite the model for distributed training with a tons of care, but also painfully debug within the deeply coupled system and model code.
+- _**Neither PyTorch-native nor Fully Automated**_: _DeepSpeed_ also relies on customized operators of Transformers and runtime engine. 
+    While it allows automation to some extent (e.g., auto-TP),
+    however, it still misses the unified automation in 3D parallelism, let alone the optimal parallelism strategy.
+- _**Not Fully Automated**_: _PyTorchDistributed family_ (_FSDP_, _PiPPy_, _TP_, and _DDP_) is indeed _PyTorch_-native. 
+    However, it still requires manual configuration and tuning. Furthermore, each of those family members was developed in isolation without a holistic design perspective, preventing an unified 3D automation.
+
+**Approach.**
+To this end, we take an initial step to fix the "broken" by proposing a novel industry-level framework that, for the first time, combines _**PyTorch Nativeness**_ and _**Automatic Parallelism**_ for scaling LLM training with the _**Ease of Use**_. 
+Ideally, we only expect model developers to write "Single-Device" model code with native `torch.nn.Module` and then we automatically parallelize it across many devices in a "6D" parallelism search space with all the optimizations and heavy lifting handled transparently.
+
+However, two major challenges exist: 
+i) _PyTorch_ is not designed for distributed programming and lacks a mature abstraction for _"Single-Program-Multiple-Data (SPMD)"_,
+and ii) _PyTorch_ is _"Eager-First"_ framework that models are always written in _Eager_ mode, leading to capturing of model graph notoriously hard (e.g., dynamic control flows, custom hooks, callbacks, flattened parameters, debuggers, etc.).
+No model graph means no automatic parallelism for existing frameworks and publications, as all rely on a "perfect model graph" to begin with.
+
+In our framework, we enable the _SPMD_ paradigm from _PyTorch_ internals by extending and enhancing an experimental primitive, _PyTorch DTensor_, to provide a global tensor semantic with local shards distributed on multiple devices.
+On top of our _DTensor_, we developed the prototype of 6D parallelism (_Tensor/Sequence/Expert/Data/ZeRO/Pipeline Parallelisms_) with a unified configuration and API.
+Furthermore, we are inventing an _Eager-Mode Planner_ that can automatically generate the best 6D configuration WITHOUT relying on model graphs at all.
+Meanwhile, our _Planner_ can also be mixed with _Compiler_ mode.
+Our preliminary results show that the top-3 models on _HuggingFace_, without code changes, can be automatically parallelized using our framework for distributed training on multiple devices while matching the loss curve of a single-device training.
+
+Our framework is now open-source for the MLSys community.
+
+## Poster: https://sites.google.com/view/mlsys24yps/schedule?authuser=0
+
+## Conference:  **MLSys 2024**

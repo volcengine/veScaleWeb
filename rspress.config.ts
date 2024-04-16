@@ -144,6 +144,13 @@ function getSidebarConfig(lang: 'zh' | 'en'): Sidebar {
     [getLink('/blog/')]: [
       {
         text: getText(
+          'MLSys2024',
+          'MLSys2024'
+        ),
+        link: getLink('/blog/mlsys2024'),
+      },
+      {
+        text: getText(
           'MegaScale',
           'MegaScale'
         ),
