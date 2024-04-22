@@ -19,7 +19,7 @@ A "ZeRO 2+" optimizer. Simliar to `DDP`, veScale `DistributedOptimizer` is prima
 
 ### `BasicOptimizer`
 
-`BasicOptimizer`'s implementation is quite simple. See the docstring of `BasicOptimizer` at `<repo>/python/vescale/optim/base_optimizer.py`.
+`BasicOptimizer`'s implementation is quite simple. See the docstring of `BasicOptimizer` at `<repo>/vescale/optim/base_optimizer.py`.
 
 ### `DistributedOptimizer`
 
@@ -66,10 +66,10 @@ mlp = MLP()
 # create 2-dim DeviceMesh, the first for data-parallel, while the second for tensor-parallel.
 device_mesh = DeviceMesh("cuda", [[0, 1], [2, 3]], mesh_dim_names=("DP", "TP"))
 
-# parallelize torch-native model into TP model (see: `<repo>/python/vescale/dmodule/README.md`)
+# parallelize torch-native model into TP model (see: `<repo>/vescale/dmodule/README.md`)
 tp_mlp = parallelize_module(mlp, device_mesh["TP"], param_and_fwd_sharding_plan)
 
-# wrap TP model with `DDP` (see: `<repo>/python/vescale/ddp/README.md`)
+# wrap TP model with `DDP` (see: `<repo>/vescale/ddp/README.md`)
 dp_tp_mlp = DDP(
     module=tp_mlp,
     data_pg_or_device_mesh=device_mesh["DP"],

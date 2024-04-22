@@ -240,6 +240,54 @@ def layer_norm_strategy(mesh: DeviceMesh, op_schema: OpSchema) -> OpStrategy:
     
 ```
 
+## How to generate random numbers in DTensor as if it's from a single GPU
+
+In veScale, we introduce a `ThreadBasedRNGTracker` for managing the RNG states across different GPUs.
+As a result, we can generate random DTensors that are identical to the ones from single GPUs.
+To use the feature, build and install a patched pytorch and set the environment variable `VESCALE_SINGLE_DEVICE_RAND=1`.
+
+
+Whenever invoking a randomized operation on a DTensor, `ThreadBasedRNGTracker` passes its sharding info to the C++/Cuda side of pytorch through the RNG state.
+This resolves the issue that OffsetBasedRNGTracker does not produce the output identical to single GPU executions.
+For example, consider generating `x = torch.rand(4)` given the current random seed and
+a global offset. In Cuda's RNG implementation, random numbers are accessed via a triple
+(seed, thread id, offset).
+
+On a single GPU, 4 GPU threads is created and the i-th thread fills the entry `x[i]`
+with `rand(seed, i, offset)`. That is, we have
+```
+    | Thread 0        | Thread 1        | Thread 2        | Thread 3        |
+x = | rand(0, offset) | rand(1, offset) | rand(2, offset) | rand(3, offset) |
+```
+After the execution of torch.rand(4), the global offset increments by 4, which is the
+granularity of cuda's RNG offsets.
+
+The global offset increments by the size of the randomness used in each thread, rounded
+up to the nearest multiple of 4. For instance, if 1000 GPU threads is used to generate
+7000 random numbers, each thread takes 7 random numbers from Cuda RNG and the global offset
+increases by 8 afterward.
+
+However, using OffsetBasedRNGTracker along with an un-patched pytorch, it outputs a
+different tensor given 2 GPUs.
+```
+    | GPU 0                                 | GPU 1                                     |
+    | Thread 0 of GPU 0 | Thread 1 of GPU 0 | Thread 0 of GPU 1   | Thread 1 of GPU 1   |
+x = | rand(0, offset)   | rand(1, offset)   | rand(0, offset + 4) | rand(1, offset + 4) |
+```
+Furthermore, after the execution, the global offset increments by 8 instead of 4.
+
+To resolve the issue, each physical thread of each GPU should fill the entry using the
+thread id as if there is only one GPU. In the previous example, the output should be
+```
+    | GPU 0                                         | GPU 1                                         |
+    | Thread 0 of GPU 0     | Thread 1 of GPU 0     | Thread 0 of GPU 1     | Thread 1 of GPU 1     |
+x = | rand(seed, 0, offset) | rand(seed, 1, offset) | rand(seed, 2, offset) | rand(seed, 3, offset) |
+```
+And after the execution, the global offset should increment by 4.
+This can be done if we pass the sharding info into Cuda functions that generate these
+outputs.
+
+
 ## Acknowledgement
 
 We would like to acknowledge the assistance of and collaboration with
