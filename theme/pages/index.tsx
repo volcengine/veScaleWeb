@@ -5,6 +5,7 @@ import { NoSSR, usePageData } from 'rspress/runtime';
 // import { Hardware } from '../components/Hardware';
 import { HomeFooter } from '../components/HomeFooter/index';
 // import { Contributors } from '../components/Contributors';
+// import { Ads } from '../components/Ads';
 
 export function HomeLayout() {
   const { page } = usePageData();
@@ -31,6 +32,7 @@ export function HomeLayout() {
       </NoSSR>
       <NoSSR><Hardware /></NoSSR>
       <Contributors /> */}
+      <Ads />
       {/* Footer */}
       <HomeFooter />
     </div>
