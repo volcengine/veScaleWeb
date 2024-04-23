@@ -1,7 +1,8 @@
 # veScale DModule (Distributed Module) for Tensor Parallel & Sequence Parallel
 
 ## TLDR
-TODO
+
+<img src="../../public/guide/dmodule.png" alt="5D" width="700"/>
 
 ## Why veScale DModule?
 
@@ -23,7 +24,7 @@ TODO
         - [experimental] given by "automatical plan generation" of veScale
     - handles gradient synchronization automatically in backward
     - support deferred initialization with `deferred_init()` (i.e., initialize with `Fake` Tensor without allocating memory, then shard Fake Tensor with TP, and then materialize only a shard of `Tensor` on device)
-    - support third-party plug-in Module (e.g. APEX)
+    - support third-party plug-in Module (e.g. `APEX`)
     - provide patch interface for customized Module-level hacking
     - extend to optional DP, optional FSDP, and optional EP (in the future)
     - provide debuggability for easy dumping, printing, listing, etc.
@@ -32,7 +33,7 @@ TODO
 
 - veScale `DModule` is inspired by PyTorch's [`parallelize_module`](https://pytorch.org/docs/stable/_modules/torch/distributed/tensor/parallel/api.html#parallelize_module), but is developed with explicit Module-level abstraction with complete features for our production usage.
 
-- veScale `DModule` extends PyTorch `parallelize_module` with extra features as below (i.e., major differences from PyTorch-v2.2.0): 
+- veScale `DModule` extends PyTorch `parallelize_module` with extra features as below: 
     - nD Tensor Parallelism
     - Sequence Parallelism
     - auto gradient synchronization
@@ -91,3 +92,10 @@ TODO
 - More details can be found in `<repo>/vescale/dmodule/api.py`
 
 - More examples can be found under `<repo>/test/dmodule/*.py`
+
+## How to use write Sharding Plan _manually_?
+
+TODO: 
+- high-level concept here
+- low-level concept in DTensor
+- example in API doc string
