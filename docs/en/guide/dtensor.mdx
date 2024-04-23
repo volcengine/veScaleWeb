@@ -36,6 +36,8 @@
 
 - _**veScale DTensor**_ extends and enhances the _**PyTorch DTensor**_ for our production standard with extra features as below:
 
+    - enabled "correct random ops" under abitrary sharding and uneven sharding, i.e., always guarantee random op sharded on multi device is equal to random op on a single device.
+
     - enabled DTensor support for third-party plug-in ops (e.g., `APEX`) by unleashing `DTensor.data_ptr` and handling asynchronous collective tensors (e.g., in `from_local`, `to_local`, `redistribute`)
 
     - make implicit `_Partial` to explicit `Partial` placement for optimized initialization, output, and checkpoint (with an extra dispatch mode)
@@ -85,8 +87,6 @@
     - support deferred initiailization and materialization for DTensor with extended `torchdistx`
 
     - [experimental] developed `InterleavedShard` placement to support merged QKV in MHA
-
-    - [experimental] enabled correct random ops under abitrary sharding and uneven sharding
 
     - [experimental] extreme performance with C++ DTensor
 
