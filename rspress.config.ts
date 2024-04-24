@@ -1,6 +1,7 @@
 import path from 'path';
 import { defineConfig } from 'rspress/config';
 import { NavItem, Sidebar } from '@rspress/shared';
+import { pluginShiki } from '@rspress/plugin-shiki';
 import { pluginRss, PluginRssOption } from './rspress/plugin-rss';
 import { toArray } from './rspress/plugin-rss/utils';
 
@@ -201,6 +202,7 @@ export default defineConfig({
     checkDeadLinks: true,
   },
   plugins: [
+    pluginShiki(),
     pluginRss({
       routePublicPath: PUBLISH_URL,
       feedOptions: { copyright: COPYRIGHT, link: PUBLISH_URL },
