@@ -2,7 +2,7 @@
 
 ## TLDR
 
-An _**Industrial-Level**_ Framework for _**Ease-of-Use**_:
+An _**Industrial-Level**_ Framework for _**Ease of Use**_:
 <img src="../../public/guide/tldr.png" alt="TL'DR" width="400"/>
 
 (`*` is under development.)
@@ -10,11 +10,11 @@ An _**Industrial-Level**_ Framework for _**Ease-of-Use**_:
 ## Why veScale
 
 The era of giant models today calls forth distributed training.
-Despite countless distributed training frameworks that have been published in the past decade (to name a few), few have excelled at the _**Ease-of-Use**_ and development extensibility demanded by real industry production,
-as the quality most favored for a framework is often the _**Ease-of-Use**_ instead of pure _Performance_. 
+Despite countless distributed training frameworks that have been published in the past decade (to name a few), few have excelled at the _**Ease of Use**_ and development extensibility demanded by real industry production,
+as the quality most favored for a framework is often the _**Ease of Use**_ instead of pure _Performance_. 
 Companies developing 100s~1000s models a week benefit the most from a framework that is both easy to use and extend, and provides elegant encapsulation of models and clean APIs.
 
-The _**Ease-of-Use**_ of a framework for training and developing LLM lies in the following essentials:
+The _**Ease of Use**_ of a framework for training and developing LLM lies in the following essentials:
 
 - 🔥 **PyTorch Native**: _PyTorch_ ecosystem dominates the ML world and owns 92% of models on _HuggingFace_ and 70% of research on _Papers with Code_; Alienating from _PyTorch_ ecosystem makes a framework hard to adapt and extend.
 
@@ -36,7 +36,7 @@ The _**Ease-of-Use**_ of a framework for training and developing LLM lies in the
 
 <img src="../../public/guide/overview.png" alt="overview" width="700"/>
 
-We take an initial step to develop an _**Industry-Level**_ framework, **veScale**, that focuses _**Ease-of-Use**_ for scaling LLM training, by combining _PyTorch Nativeness_ and _Automatic Parallelism*_. 
+We take an initial step to develop an _**Industry-Level**_ framework, **veScale**, that focuses _**Ease of Use**_ for scaling LLM training, by combining _PyTorch Nativeness_ and _Automatic Parallelism*_. 
 
 Ideally, **veScale** only expects model developers to write a simple model code with native _torch.nn.Module_ under _Zero Code Change_ as if running on a _Single Device_, and then **veScale** will automatically parallelize it across a cluster of devices in a _nD Parallelism_ search space with all the optimizations and heavy lifting handled transparently.
 

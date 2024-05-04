@@ -5,7 +5,7 @@ linkFeed: blog-en
 hero:
   # name: veScale
   text: A PyTorch Native LLM Training Framework
-  tagline: An Industrial-Level Framework for Ease-of-Use
+  tagline: An Industrial-Level Framework for Ease of Use
   image:
     src: /icon.png
     alt: logo
